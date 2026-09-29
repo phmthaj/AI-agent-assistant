@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Agent Console</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="side-panel">
+        <div class="brand-row">
+          <div class="brand-mark">AI</div>
+          <div>
+            <h1>Agent Console</h1>
+            <p id="healthText">Checking backend...</p>
+          </div>
+        </div>
+
+        <section class="metric-grid" aria-label="Run metrics">
+          <div>
+            <span>Conversation</span>
+            <strong id="conversationId">New</strong>
+          </div>
+          <div>
+            <span>Agent Run</span>
+            <strong id="agentRunId">-</strong>
+          </div>
+        </section>
+
+        <section class="tool-panel">
+          <div class="panel-heading">
+            <h2>Tool Calls</h2>
+            <button id="clearToolsButton" type="button">Clear</button>
+          </div>
+          <div id="toolCalls" class="tool-list">
+            <p class="empty-state">No tool calls yet.</p>
+          </div>
+        </section>
+
+        <button id="newConversationButton" class="secondary-action" type="button">
+          New Conversation
+        </button>
+      </aside>
+
+      <section class="chat-panel">
+        <div id="messages" class="message-list" aria-live="polite"></div>
+
+        <form id="chatForm" class="composer">
+          <textarea
+            id="messageInput"
+            name="message"
+            rows="3"
+            placeholder="Nhập câu hỏi..."
+            autocomplete="off"
+            required
+          ></textarea>
+          <button id="sendButton" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
